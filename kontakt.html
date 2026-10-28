@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="sv">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,7 @@
     <body>
         <header>
             <h1>Kafé Kardemumma</h1>
-            <nav aria-label="Huvudmeny">
+            <nav aria-label="Main Menu">
                 <ul>
                     <li><a href="index.html">Start Page</a></li>
                     <li><a href="index.html#meny">Menu</a></li>
@@ -23,121 +23,130 @@
 
         <main>
             <h2>Book a Table</h2>
-            <!-- TODO: Skriv ingressen från innehall.md -->
+            <!-- just for clarification -->
+            <p>Fields marked with * are required.</p>
 
             <form action="#" method="post">
-                <!-- TODO 1: fält för namn, e-post, telefon, datum (label + input med for/id) -->
-                <!-- TODO 2: rullista för antal personer, textarea för önskemål -->
-                <!-- TODO 3: fieldset + legend för kostönskemål och bekräftelsesätt -->
-                <!-- TODO 4: samtyckeskryssruta (required) och skickaknapp -->
+                <!-- replace # later with actual form action -->
 
-                <!-- fields for main details -->
-                <div class="field">
-                    <label for="Name">Name *</label>
-                    <input
-                        type="text"
-                        id="Name"
-                        name="Name"
-                        autocomplete="name"
-                    />
-                </div>
+                <section aria-labelledby="booking-heading">
+                    <h3 id="booking-heading">Contact details</h3>
+                    <div class="field">
+                        <label for="Name">Name *</label>
+                        <input
+                            type="text"
+                            id="Name"
+                            name="Name"
+                            autocomplete="name"
+                        />
+                    </div>
 
-                <div class="field">
-                    <label for="Email">Email *</label>
-                    <input
-                        type="email"
-                        id="Email"
-                        name="Email"
-                        autocomplete="email"
-                    />
-                </div>
-                <div class="field">
-                    <label for="telephone">Phone</label>
-                    <input
-                        type="tel"
-                        id="telephone"
-                        name="telephone"
-                        autocomplete="tel"
-                        oninput="
-                            this.value = this.value.replace(/[^0-9+]/g, '')
-                        "
-                    />
-                </div>
-                <div class="field">
-                    <label for="Date">Date *</label>
-                    <input type="date" id="Date" name="Date" />
-                </div>
+                    <div class="field">
+                        <label for="Email">Email *</label>
+                        <input
+                            type="email"
+                            id="Email"
+                            name="Email"
+                            autocomplete="email"
+                        />
+                    </div>
+                    <div class="field">
+                        <label for="telephone">Phone</label>
+                        <input
+                            type="tel"
+                            id="telephone"
+                            name="telephone"
+                            autocomplete="tel"
+                            oninput="
+                                this.value = this.value.replace(/[^0-9+]/g, '')
+                            "
+                        />
+                    </div>
+                </section>
+                <section aria-labelledby="booking-heading">
+                    <h3 id="booking-heading">Booking details</h3>
 
-                <label for="persons">Number of Persons *</label>
-                <select id="persons" name="persons">
-                    <option value="1">1 person</option>
-                    <option value="2">2 person</option>
-                    <option value="3">3 person</option>
-                    <option value="4">4 person</option>
-                    <option value="5+">5 or more</option>
-                </select>
+                    <div class="field">
+                        <label for="Date">Date *</label>
+                        <input type="date" id="Date" name="Date" />
+                    </div>
 
-                <fieldset>
-                    <legend>Dietary preferences</legend>
-                    <input
-                        type="checkbox"
-                        id="vegetarian"
-                        name="dietary"
-                        value="vegetarian"
-                    />
-                    <label for="vegetarian">Vegetarian</label><br />
-                    <input
-                        type="checkbox"
-                        id="vegan"
-                        name="dietary"
-                        value="vegan"
-                    />
-                    <label for="vegan">Vegan</label><br />
-                    <input
-                        type="checkbox"
-                        id="gluten-free"
-                        name="dietary"
-                        value="gluten-free"
-                    />
-                    <label for="gluten-free">Gluten-Free</label><br />
-                </fieldset>
+                    <label for="persons">Number of Persons *</label>
+                    <select id="persons" name="persons">
+                        <option value="1">1 person</option>
+                        <option value="2">2 person</option>
+                        <option value="3">3 person</option>
+                        <option value="4">4 person</option>
+                        <option value="5+">5 or more</option>
+                    </select>
+                </section>
+                <section aria-labelledby="preferences-heading">
+                    <h3 id="preferences-heading">Preferences</h3>
+                    <fieldset>
+                        <legend>Dietary preferences</legend>
+                        <input
+                            type="checkbox"
+                            id="vegetarian"
+                            name="dietary"
+                            value="vegetarian"
+                        />
+                        <label for="vegetarian">Vegetarian</label><br />
+                        <input
+                            type="checkbox"
+                            id="vegan"
+                            name="dietary"
+                            value="vegan"
+                        />
+                        <label for="vegan">Vegan</label><br />
+                        <input
+                            type="checkbox"
+                            id="gluten-free"
+                            name="dietary"
+                            value="gluten-free"
+                        />
+                        <label for="gluten-free">Gluten-Free</label><br />
+                    </fieldset>
 
-                <fieldset>
-                    <legend>
-                        How would you like to receive the confirmation?
-                    </legend>
-                    <input
-                        type="radio"
-                        id="email"
-                        name="confirmation"
-                        value="email"
-                    />
-                    <label for="email">Email</label><br />
-                    <input
-                        type="radio"
-                        id="sms"
-                        name="confirmation"
-                        value="sms"
-                    />
-                    <label for="sms">SMS</label><br />
-                </fieldset>
+                    <fieldset>
+                        <legend>
+                            How would you like to receive the confirmation?
+                        </legend>
+                        <input
+                            type="radio"
+                            id="email"
+                            name="confirmation"
+                            value="email"
+                        />
+                        <label for="email">Email</label><br />
+                        <input
+                            type="radio"
+                            id="sms"
+                            name="confirmation"
+                            value="sms"
+                        />
+                        <label for="sms">SMS</label><br />
+                    </fieldset>
 
-                <label for="requests">Other requests</label>
-                <textarea id="requests" name="requests"></textarea>
-                <div>
-                    <input
-                        type="checkbox"
-                        id="consent"
-                        name="consent"
-                        required
-                    />
-                    <label for="consent"
-                        >I agree that Kafé Kardemumma saves my details for the
-                        booking. *</label
-                    >
-                </div>
+                    <label for="requests">Other requests</label>
+                    <textarea id="requests" name="requests"></textarea>
+                </section>
+                <section aria-labelledby="consentsubmit-heading">
+                    <h3 id="consentsubmit-heading">Consent and submission</h3>
+                    <div>
+                        <input
+                            type="checkbox"
+                            id="consent"
+                            name="consent"
+                            required
+                        />
+                        <label for="consent"
+                            >I agree that Kafé Kardemumma saves my details for
+                            the booking. *</label
+                        >
+                    </div>
 
-                <button id="btnBooking">Send Booking</button>
+                    <button id="btnBooking">Send Booking</button>
+                </section>
             </form>
         </main>
 
