@@ -94,6 +94,9 @@
 
                     <label for="persons">Number of Persons *</label>
                     <select id="persons" name="persons" required>
+                        <option value="" selected disabled>
+                            Choose number of Persons
+                        </option>
                         <option value="1">1 person</option>
                         <option value="2">2 person</option>
                         <option value="3">3 person</option>
@@ -141,13 +144,14 @@
 
                     <fieldset>
                         <legend>
-                            How would you like to receive the confirmation?
+                            How would you like to receive the confirmation? *
                         </legend>
                         <input
                             type="radio"
                             id="email"
                             name="confirmation"
                             value="email"
+                            required
                         />
                         <label for="email">Email</label><br />
                         <input
