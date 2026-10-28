@@ -84,6 +84,7 @@
                             name="Date"
                             required
                             aria-describedby="date-note"
+                            min="2026-10-29"
                         />
 
                         <small id="date-note">
@@ -100,12 +101,15 @@
                         <option value="5+">5 or more</option>
                     </select>
                     <label for="children">Number of Children</label>
+                    <!--set default value to be 0 -->
+
                     <input
                         type="number"
                         id="children"
                         name="children"
                         min="0"
                         max="5"
+                        value="0"
                     />
                 </section>
                 <section aria-labelledby="preferences-heading">
