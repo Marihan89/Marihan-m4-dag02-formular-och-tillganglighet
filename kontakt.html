@@ -43,15 +43,23 @@
                     </div>
 
                     <div class="field">
-                        <label for="Email">Email *</label>
+                        <p id="required-note">
+                            Fields marked with * are required.
+                        </p>
+                        <label for="Email"> Email * </label>
                         <input
                             type="email"
                             id="Email"
                             name="Email"
                             autocomplete="email"
+                            aria-describedby="email-help"
                             required
                         />
                     </div>
+                    <small id="email-help">
+                        Enter a valid email address to receive your booking
+                        confirmation.
+                    </small>
                     <div class="field">
                         <label for="telephone">Phone</label>
                         <input
@@ -70,7 +78,17 @@
 
                     <div class="field">
                         <label for="Date">Date *</label>
-                        <input type="date" id="Date" name="Date" required />
+                        <input
+                            type="date"
+                            id="Date"
+                            name="Date"
+                            required
+                            aria-describedby="date-note"
+                        />
+
+                        <small id="date-note">
+                            Please select a date for your booking.
+                        </small>
                     </div>
 
                     <label for="persons">Number of Persons *</label>
@@ -81,6 +99,14 @@
                         <option value="4">4 person</option>
                         <option value="5+">5 or more</option>
                     </select>
+                    <label for="children">Number of Children</label>
+                    <input
+                        type="number"
+                        id="children"
+                        name="children"
+                        min="0"
+                        max="5"
+                    />
                 </section>
                 <section aria-labelledby="preferences-heading">
                     <h3 id="preferences-heading">Preferences</h3>
