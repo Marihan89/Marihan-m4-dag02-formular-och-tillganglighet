@@ -1,40 +1,154 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sv">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boka bord – Kafé Kardemumma</title>
-</head>
-<body>
-  <header>
-    <h1>Kafé Kardemumma</h1>
-    <nav aria-label="Huvudmeny">
-      <ul>
-        <li><a href="index.html">Startsida</a></li>
-        <li><a href="index.html#meny">Meny</a></li>
-        <li><a href="kontakt.html" aria-current="page">Boka bord</a></li>
-      </ul>
-    </nav>
-  </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Book a Table – Kafé Kardemumma</title>
+    </head>
+    <body>
+        <header>
+            <h1>Kafé Kardemumma</h1>
+            <nav aria-label="Huvudmeny">
+                <ul>
+                    <li><a href="index.html">Start Page</a></li>
+                    <li><a href="index.html#meny">Menu</a></li>
+                    <li>
+                        <a href="kontakt.html" aria-current="page"
+                            >Book a Table</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-  <main>
-    <h2>Boka bord</h2>
-    <!-- TODO: Skriv ingressen från innehall.md -->
+        <main>
+            <h2>Book a Table</h2>
+            <!-- TODO: Skriv ingressen från innehall.md -->
 
-    <form action="#" method="post">
-      <!-- TODO 1: fält för namn, e-post, telefon, datum (label + input med for/id) -->
-      <!-- TODO 2: rullista för antal personer, textarea för önskemål -->
-      <!-- TODO 3: fieldset + legend för kostönskemål och bekräftelsesätt -->
-      <!-- TODO 4: samtyckeskryssruta (required) och skickaknapp -->
-    </form>
-  </main>
+            <form action="#" method="post">
+                <!-- TODO 1: fält för namn, e-post, telefon, datum (label + input med for/id) -->
+                <!-- TODO 2: rullista för antal personer, textarea för önskemål -->
+                <!-- TODO 3: fieldset + legend för kostönskemål och bekräftelsesätt -->
+                <!-- TODO 4: samtyckeskryssruta (required) och skickaknapp -->
 
-  <footer>
-    <p>&copy; 2026 Kafé Kardemumma</p>
-    <address>
-      Fiktivgatan 1, 111 11 Stockholm<br>
-      <a href="mailto:hej@kardemumma.example">hej@kardemumma.example</a>
-    </address>
-  </footer>
-</body>
+                <!-- fields for main details -->
+                <div class="field">
+                    <label for="Name">Name *</label>
+                    <input
+                        type="text"
+                        id="Name"
+                        name="Name"
+                        autocomplete="name"
+                    />
+                </div>
+
+                <div class="field">
+                    <label for="Email">Email *</label>
+                    <input
+                        type="email"
+                        id="Email"
+                        name="Email"
+                        autocomplete="email"
+                    />
+                </div>
+                <div class="field">
+                    <label for="telephone">Phone</label>
+                    <input
+                        type="tel"
+                        id="telephone"
+                        name="telephone"
+                        autocomplete="tel"
+                        oninput="
+                            this.value = this.value.replace(/[^0-9+]/g, '')
+                        "
+                    />
+                </div>
+                <div class="field">
+                    <label for="Date">Date *</label>
+                    <input type="date" id="Date" name="Date" />
+                </div>
+
+                <label for="persons">Number of Persons *</label>
+                <select id="persons" name="persons">
+                    <option value="1">1 person</option>
+                    <option value="2">2 person</option>
+                    <option value="3">3 person</option>
+                    <option value="4">4 person</option>
+                    <option value="5+">5 or more</option>
+                </select>
+
+                <fieldset>
+                    <legend>Dietary preferences</legend>
+                    <input
+                        type="checkbox"
+                        id="vegetarian"
+                        name="dietary"
+                        value="vegetarian"
+                    />
+                    <label for="vegetarian">Vegetarian</label><br />
+                    <input
+                        type="checkbox"
+                        id="vegan"
+                        name="dietary"
+                        value="vegan"
+                    />
+                    <label for="vegan">Vegan</label><br />
+                    <input
+                        type="checkbox"
+                        id="gluten-free"
+                        name="dietary"
+                        value="gluten-free"
+                    />
+                    <label for="gluten-free">Gluten-Free</label><br />
+                </fieldset>
+
+                <fieldset>
+                    <legend>
+                        How would you like to receive the confirmation?
+                    </legend>
+                    <input
+                        type="radio"
+                        id="email"
+                        name="confirmation"
+                        value="email"
+                    />
+                    <label for="email">Email</label><br />
+                    <input
+                        type="radio"
+                        id="sms"
+                        name="confirmation"
+                        value="sms"
+                    />
+                    <label for="sms">SMS</label><br />
+                </fieldset>
+
+                <label for="requests">Other requests</label>
+                <textarea id="requests" name="requests"></textarea>
+                <div>
+                    <input
+                        type="checkbox"
+                        id="consent"
+                        name="consent"
+                        required
+                    />
+                    <label for="consent"
+                        >I agree that Kafé Kardemumma saves my details for the
+                        booking. *</label
+                    >
+                </div>
+
+                <button id="btnBooking">Send Booking</button>
+            </form>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Kafé Kardemumma</p>
+            <address>
+                Fiktivgatan 1, 111 11 Stockholm<br />
+                <a href="mailto:hej@kardemumma.example"
+                    >hej@kardemumma.example</a
+                >
+            </address>
+        </footer>
+    </body>
 </html>
