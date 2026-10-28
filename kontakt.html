@@ -29,8 +29,8 @@
             <form action="#" method="post">
                 <!-- replace # later with actual form action -->
 
-                <section aria-labelledby="booking-heading">
-                    <h3 id="booking-heading">Contact details</h3>
+                <section aria-labelledby="contact-heading">
+                    <h3 id="contact-heading">Contact details</h3>
                     <div class="field">
                         <label for="Name">Name *</label>
                         <input
@@ -38,6 +38,7 @@
                             id="Name"
                             name="Name"
                             autocomplete="name"
+                            required
                         />
                     </div>
 
@@ -48,6 +49,7 @@
                             id="Email"
                             name="Email"
                             autocomplete="email"
+                            required
                         />
                     </div>
                     <div class="field">
@@ -68,11 +70,11 @@
 
                     <div class="field">
                         <label for="Date">Date *</label>
-                        <input type="date" id="Date" name="Date" />
+                        <input type="date" id="Date" name="Date" required />
                     </div>
 
                     <label for="persons">Number of Persons *</label>
-                    <select id="persons" name="persons">
+                    <select id="persons" name="persons" required>
                         <option value="1">1 person</option>
                         <option value="2">2 person</option>
                         <option value="3">3 person</option>
